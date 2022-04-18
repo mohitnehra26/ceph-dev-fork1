@@ -151,6 +151,8 @@ services:
             - KEYCLOAK_PASSWORD=keycloak
             - KEYCLOAK_IMPORT=/docker/saml-demo-realm.json
             - BIND=127.0.0.1
+            environment:
+            - DASHBOARD_URL=${DASHBOARD_URL:-https://ceph:11000}
         scale: -1
     
     haproxy:
